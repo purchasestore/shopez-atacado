@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import Modal from 'react-bootstrap/Modal';
 
 //Header component
-const Header = ({ cart }) => { //add cart as a prop
+const Header = ({ cart, setShow }) => {
   //calculate total value of cart
-  const total = cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0); //change reduce to include quantity in total calculation
+  const total = cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
 
   return (
     <header className="bg-dark text-white">
@@ -13,12 +13,12 @@ const Header = ({ cart }) => { //add cart as a prop
         <div className="company-name h3 mb-0">Shopez</div>
         <div className="cart text-end">
           <span className="cart-count me-3">{cart.length} items</span>
-          <span className="cart-total">${total.toFixed(2)}</span> {/*display total value of cart with 2 decimal places*/}
-          <button className="btn btn-primary" data-toggle="modal" data-target="#cartModal">See Cart</button> {/*add button to see cart in modal*/}
+          <span className="cart-total">${total.toFixed(2)}</span>
+          <button className="btn btn-primary btn-sm" onClick={() => setShow(true)}>View cart</button>
         </div>
       </div>
     </header>
-  );
+  )
 };
 
 //Product list component
@@ -62,7 +62,7 @@ const ProductList = ({ addToCart }) => { //add addToCart as a prop
   );
 };
 //Cart list component
-const CartList = ({ cart }) => {
+const CartList = ({ cart, deleteItem }) => { //add deleteItem as a prop
   //calculate total value of cart
   const total = cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0); //change reduce to include quantity in total calculation
 
@@ -72,6 +72,7 @@ const CartList = ({ cart }) => {
         <div className="cart-item row py-2" key={product.name}>
           <div className="col">{product.name} - {product.size} - {product.quantity}</div>
           <div className="col-auto">${(product.price * product.quantity).toFixed(2)}</div> {/*display product price with 2 decimal places*/}
+          <div className="col-auto"><button className="btn btn-primary" onClick={() => deleteItem(product)}>Delete</button></div> {/*add delete button*/}
         </div>
       ))}
       <div className="cart-item row py-2">
@@ -84,40 +85,43 @@ const CartList = ({ cart }) => {
 
 //Main component
 const App = () => {
-  const [cart, setCart] = useState([]); //add cart state
+  const [cart, setCart] = useState([]);
+  const [show, setShow] = useState(false); //add show state
 
   const addToCart = (product) => {
     let itemIndex = cart.findIndex((item) => item.name === product.name && item.size === product.size);
-    if (itemIndex !== -1) {
-      cart[itemIndex].quantity += product.quantity; //change quantity of existing item
+    
+    if (itemIndex === -1) {
+      setCart([...cart, product]);
     } else {
-      cart.push(product);
+      let newCart = [...cart];
+      newCart[itemIndex].quantity = product.quantity;
+      setCart(newCart);
     }
-    setCart([...cart]);
   };
 
+  const deleteItem = (product) => { //add function to delete item
+    let itemIndex = cart.findIndex((item) => item.name === product.name && item.size === product.size);
+    let newCart = [...cart];
+    newCart.splice(itemIndex, 1);
+    setCart(newCart);
+  }
+
   return (
-    <div>
-      <Header cart={cart} />
+    <div className="App">
+      <Header cart={cart} setShow={setShow} /> {/*add setShow to Header props*/}
       <ProductList addToCart={addToCart} />
-      <div className="modal fade" id="cartModal" tabIndex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true"> {/*add modal*/}
-        <div className="modal-dialog" role="document">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="cartModalLabel">My Cart</h5>
-              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div className="modal-body">
-              {cart.length > 0 ? <CartList cart={cart} /> : <p>Cart is empty</p>}
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Modal show={show} onHide={() => setShow(false)}> 
+        <Modal.Header closeButton>
+          <Modal.Title>Shopping Cart</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <CartList cart={cart} deleteItem={deleteItem} /> 
+        </Modal.Body>
+        <Modal.Footer>
+          <button className="btn btn-primary" onClick={() => setShow(false)}>Close</button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
