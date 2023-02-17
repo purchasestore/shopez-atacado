@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //Header component
 const Header = ({ cart }) => { //add cart as a prop
   //calculate total value of cart
-  const total = cart.reduce((acc, cur) => acc + cur.price, 0);
+  const total = cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0); //change reduce to include quantity in total calculation
 
   return (
     <header className="bg-dark text-white">
@@ -15,7 +15,6 @@ const Header = ({ cart }) => { //add cart as a prop
           <span className="cart-total">${total.toFixed(2)}</span> {/*display total value of cart with 2 decimal places*/}
         </div>
       </div>
-      <a href={`https://wa.me/+551199999999?text=Seu pedido foi:%0A${cart.map((item) => `${item.name} - $${item.price.toFixed(2)} - ${item.size}`).join('%0A')}%0AO valor total é: $${total.toFixed(2)}`} className="whatsapp-message d-flex justify-content-end pe-3">Custom WhatsApp Message</a> {/*fix WhatsApp message link*/}
     </header>
   );
 };
@@ -23,10 +22,10 @@ const Header = ({ cart }) => { //add cart as a prop
 //Product list component
 const ProductList = ({ addToCart }) => { //add addToCart as a prop
   const products = [
-    { name: 'Product 1', price: 10.99, size: 'M', image: 'product1.jpg' },
-    { name: 'Product 2', price: 19.99, size: 'PP', image: 'product2.jpg' },
-    { name: 'Product 3', price: 24.99, size: 'P', image: 'product3.jpg' },
-    { name: 'Product 4', price: 14.99, size: 'G', image: 'product4.jpg' },
+    { name: 'Product 1', price: 10.99, size: 'M', image: 'https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr--p-1656093927804.jpeg' },
+    { name: 'Product 2', price: 19.99, size: 'PP', image: 'https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr--p-1673444046549.png' },
+    { name: 'Product 3', price: 24.99, size: 'P', image: 'https://17741.cdn.simplo7.net/static/17741/sku/saia-saia-argola-sexy--p-1663959870905.jpeg' },
+    { name: 'Product 4', price: 14.99, size: 'G', image: 'https://17741.cdn.simplo7.net/static/17741/sku/biquinis-biquini-fio-com-argola-1676509827180.jpeg' },
   ];
 
   return (
@@ -47,6 +46,11 @@ const ProductList = ({ addToCart }) => { //add addToCart as a prop
                     <option value="M">M</option>
                   </select>
                 </div>
+                <div className="form-group">
+                  <label htmlFor="quantity">Quantity</label>
+                  <input type="number" className="form-control" id="quantity" min="1" onChange={(e) => addToCart({ ...product, quantity: parseInt(e.target.value) })} /> {/*add quantity input field*/}
+                </div>
+                <button className="btn btn-primary" onClick={() => addToCart({ ...product, quantity: 1 })}>Add to cart</button> {/*add button to add item to cart*/}
               </div>
             </div>
           </div>
@@ -58,14 +62,14 @@ const ProductList = ({ addToCart }) => { //add addToCart as a prop
 //Cart list component
 const CartList = ({ cart }) => {
   //calculate total value of cart
-  const total = cart.reduce((acc, cur) => acc + cur.price, 0);
+  const total = cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0); //change reduce to include quantity in total calculation
 
   return (
     <div className="cart-list container my-4">
       {cart.map((product) => (
         <div className="cart-item row py-2" key={product.name}>
-          <div className="col">{product.name} - {product.size}</div>
-          <div className="col-auto">${product.price.toFixed(2)}</div> {/*display product price with 2 decimal places*/}
+          <div className="col">{product.name} - {product.size} - {product.quantity}</div>
+          <div className="col-auto">${(product.price * product.quantity).toFixed(2)}</div> {/*display product price with 2 decimal places*/}
         </div>
       ))}
       <div className="cart-total row pt-3">
@@ -79,8 +83,8 @@ const CartList = ({ cart }) => {
 //Footer component
 const Footer = ({ cart }) => {
   //create WhatsApp message with list of cart items and total value
-  const cartItems = cart.map((item) => `${item.name} - ${item.size} - $${item.price.toFixed(2)}`).join('%0A');
-  const message = `Seu pedido foi:%0A${cartItems}%0AO valor total é: $${cart.reduce((acc, cur) => acc + cur.price, 0).toFixed(2)}`;
+  const cartItems = cart.map((item) => `${item.name} - ${item.size} - $${item.price.toFixed(2)} - ${item.quantity} unidades`).join('%0A');
+  const message = `Seu pedido foi:%0A${cartItems}%0AO valor total é: $${cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0).toFixed(2)}`; //change reduce to include quantity in total calculation
 
   return (
     <footer className="bg-light pt-4">
@@ -97,7 +101,13 @@ const App = () => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
-    setCart([...cart, product]);
+    const existingProduct = cart.find((item) => item.name === product.name && item.size === product.size); //find existing product
+
+    if (existingProduct) {
+      setCart(cart.map((item) => (item === existingProduct ? { ...item, quantity: item.quantity + product.quantity } : item))); //update existing product quantity
+    } else {
+      setCart([...cart, product]);
+    }
   };
 
   return (
