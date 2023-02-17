@@ -15,7 +15,7 @@ const Header = ({ cart }) => { //add cart as a prop
           <span className="cart-total">${total.toFixed(2)}</span> {/*display total value of cart with 2 decimal places*/}
         </div>
       </div>
-      <a href={`https://wa.me/+551199999999?text=Olá estou comprando pela Simple Store BR.%0A`} className="whatsapp-message d-flex justify-content-end pe-3">Custom WhatsApp Message</a> {/*fix WhatsApp message link*/}
+      <a href={`https://wa.me/+551199999999?text=Seu pedido foi:%0A${cart.map((item) => `${item.name} - $${item.price.toFixed(2)} - ${item.size}`).join('%0A')}%0AO valor total é: $${total.toFixed(2)}`} className="whatsapp-message d-flex justify-content-end pe-3">Custom WhatsApp Message</a> {/*fix WhatsApp message link*/}
     </header>
   );
 };
@@ -39,8 +39,14 @@ const ProductList = ({ addToCart }) => { //add addToCart as a prop
               <div className="card-body d-flex flex-column">
                 <h3 className="card-title">{product.name}</h3>
                 <span className="product-price h5">${product.price.toFixed(2)}</span> {/*display product price with 2 decimal places*/}
-                <span className="product-size mb-3">{product.size}</span>
-                <button className="btn btn-primary mt-auto" onClick={() => addToCart(product)}>Add to cart</button>
+                <div className="form-group">
+                  <label htmlFor="size">Size</label>
+                  <select className="form-control" id="size" onChange={(e) => addToCart({ ...product, size: e.target.value })}>
+                    <option value="PP">PP</option>
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
@@ -58,7 +64,7 @@ const CartList = ({ cart }) => {
     <div className="cart-list container my-4">
       {cart.map((product) => (
         <div className="cart-item row py-2" key={product.name}>
-          <div className="col">{product.name}</div>
+          <div className="col">{product.name} - {product.size}</div>
           <div className="col-auto">${product.price.toFixed(2)}</div> {/*display product price with 2 decimal places*/}
         </div>
       ))}
@@ -73,8 +79,8 @@ const CartList = ({ cart }) => {
 //Footer component
 const Footer = ({ cart }) => {
   //create WhatsApp message with list of cart items and total value
-  const cartItems = cart.map((item) => `${item.name} - $${item.price.toFixed(2)}`).join('%0A');
-  const message = `Olá estou comprando pela Shopez.%0A${cartItems}%0AValor total: $${cart.reduce((acc, cur) => acc + cur.price, 0).toFixed(2)}`;
+  const cartItems = cart.map((item) => `${item.name} - ${item.size} - $${item.price.toFixed(2)}`).join('%0A');
+  const message = `Seu pedido foi:%0A${cartItems}%0AO valor total é: $${cart.reduce((acc, cur) => acc + cur.price, 0).toFixed(2)}`;
 
   return (
     <footer className="bg-light pt-4">
