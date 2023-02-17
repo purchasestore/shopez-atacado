@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 //Header component
 const Header = ({ cart }) => { //add cart as a prop
   //calculate total value of cart
@@ -13,6 +14,7 @@ const Header = ({ cart }) => { //add cart as a prop
         <div className="cart text-end">
           <span className="cart-count me-3">{cart.length} items</span>
           <span className="cart-total">${total.toFixed(2)}</span> {/*display total value of cart with 2 decimal places*/}
+          <button className="btn btn-primary" data-toggle="modal" data-target="#cartModal">See Cart</button> {/*add button to see cart in modal*/}
         </div>
       </div>
     </header>
@@ -72,49 +74,50 @@ const CartList = ({ cart }) => {
           <div className="col-auto">${(product.price * product.quantity).toFixed(2)}</div> {/*display product price with 2 decimal places*/}
         </div>
       ))}
-      <div className="cart-total row pt-3">
-        <div className="col">Total:</div>
-        <div className="col-auto">${total.toFixed(2)}</div> {/*display total value of cart with 2 decimal places*/}
+      <div className="cart-item row py-2">
+        <div className="col font-weight-bold">Total</div>
+        <div className="col-auto font-weight-bold">${total.toFixed(2)}</div> {/*display total value of cart with 2 decimal places*/}
       </div>
     </div>
   );
 };
 
-//Footer component
-const Footer = ({ cart }) => {
-  //create WhatsApp message with list of cart items and total value
-  const cartItems = cart.map((item) => `${item.name} - ${item.size} - $${item.price.toFixed(2)} - ${item.quantity} unidades`).join('%0A');
-  const message = `Seu pedido foi:%0A${cartItems}%0AO valor total é: $${cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0).toFixed(2)}`; //change reduce to include quantity in total calculation
-
-  return (
-    <footer className="bg-light pt-4">
-      <div className="container">
-        <a href={`https://wa.me/whatsappphonenumber?text=${message}`} className="whatsapp-message d-flex justify-content-end">Custom WhatsApp Message</a> {/*fix WhatsApp message link*/}
-        <CartList cart={cart} />
-      </div>
-    </footer>
-  );
-};
-
 //Main component
 const App = () => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([]); //add cart state
 
   const addToCart = (product) => {
-    const existingProduct = cart.find((item) => item.name === product.name && item.size === product.size); //find existing product
-
-    if (existingProduct) {
-      setCart(cart.map((item) => (item === existingProduct ? { ...item, quantity: item.quantity + product.quantity } : item))); //update existing product quantity
+    let itemIndex = cart.findIndex((item) => item.name === product.name && item.size === product.size);
+    if (itemIndex !== -1) {
+      cart[itemIndex].quantity += product.quantity; //change quantity of existing item
     } else {
-      setCart([...cart, product]);
+      cart.push(product);
     }
+    setCart([...cart]);
   };
 
   return (
     <div>
       <Header cart={cart} />
       <ProductList addToCart={addToCart} />
-      <Footer cart={cart} />
+      <div className="modal fade" id="cartModal" tabIndex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true"> {/*add modal*/}
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="cartModalLabel">My Cart</h5>
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              {cart.length > 0 ? <CartList cart={cart} /> : <p>Cart is empty</p>}
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
