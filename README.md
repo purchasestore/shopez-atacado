@@ -1,7 +1,8 @@
 # Shopez - E-commerce Web Application
-Shopez is a simple e-commerce web application built with React that allows users to browse and purchase products.
+Shopez is a simple e-commerce web application built with React that allows users to browse and purchase products and send Whatsapp message with the order.
 
-## Features
+## Features![Screenshot from 2023-02-17 15-54-30](https://user-images.githubusercontent.com/8432835/219759727-c1db8f1a-8d74-4ebc-804d-4e8505cd7012.png)
+
 * Display a list of products with their name, price, size and image
 * Add products to a shopping cart
 * View shopping cart with list of products and total value
