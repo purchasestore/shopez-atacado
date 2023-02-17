@@ -5,7 +5,12 @@ import Modal from 'react-bootstrap/Modal';
 //Header component
 const Header = ({ cart, setShow }) => {
   //calculate total value of cart
-  const total = cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
+  const total = cart.reduce((acc, cur) => {
+    if (cur.quantity > 0) { //block the option of add in the cart list if input is zero or empty
+      return acc + cur.price * cur.quantity;
+    }
+    return acc;
+  }, 0);
 
   return (
     <header className="bg-dark text-white">
@@ -62,15 +67,23 @@ const ProductList = ({ addToCart }) => { //add addToCart as a prop
   );
 };
 //Cart list component
-const CartList = ({ cart, deleteItem }) => { //add deleteItem as a prop
+const CartList = ({ cart, deleteItem, editQuantity }) => { //add deleteItem as a prop
   //calculate total value of cart
-  const total = cart.reduce((acc, cur) => acc + cur.price * cur.quantity, 0); //change reduce to include quantity in total calculation
+  const total = cart.reduce((acc, cur) => {
+    if (cur.quantity > 0) { //block the option of add in the cart list if input is zero or empty
+      return acc + cur.price * cur.quantity;
+    }
+    return acc;
+  }, 0); //change reduce to include quantity in total calculation
 
   return (
     <div className="cart-list container my-4">
       {cart.map((product) => (
         <div className="cart-item row py-2" key={product.name}>
-          <div className="col">{product.name} - {product.size} - {product.quantity}</div>
+          <div className="col">{product.name} - {product.size}</div>
+          <div className="col-auto">
+            <input type="number" className="form-control" min="1" onChange={(e) => editQuantity(product, parseInt(e.target.value))} value={product.quantity} /> {/*add quantity input field*/}
+          </div>
           <div className="col-auto">${(product.price * product.quantity).toFixed(2)}</div> {/*display product price with 2 decimal places*/}
           <div className="col-auto"><button className="btn btn-primary" onClick={() => deleteItem(product)}>Delete</button></div> {/*add delete button*/}
         </div>
@@ -84,9 +97,19 @@ const CartList = ({ cart, deleteItem }) => { //add deleteItem as a prop
 };
 
 //Main component
+const WhatsAppButton = ({ message }) => {
+  const whatsappLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
+
+  return (
+    <a href={whatsappLink} className="btn btn-success" target="_blank" rel="noopener noreferrer">
+      Send WhatsApp message
+    </a>
+  );
+};
+
 const App = () => {
   const [cart, setCart] = useState([]);
-  const [show, setShow] = useState(false); //add show state
+  const [show, setShow] = useState(false);
 
   const addToCart = (product) => {
     let itemIndex = cart.findIndex((item) => item.name === product.name && item.size === product.size);
@@ -100,12 +123,28 @@ const App = () => {
     }
   };
 
-  const deleteItem = (product) => { //add function to delete item
+  const deleteItem = (product) => {
     let itemIndex = cart.findIndex((item) => item.name === product.name && item.size === product.size);
     let newCart = [...cart];
     newCart.splice(itemIndex, 1);
     setCart(newCart);
   }
+
+  const editQuantity = (product, newQuantity) => { //add function to edit quantity
+    let itemIndex = cart.findIndex((item) => item.name === product.name && item.size === product.size);
+    let newCart = [...cart];
+    if (newQuantity > 0) {
+      newCart[itemIndex].quantity = newQuantity;
+    } else {
+      newCart.splice(itemIndex, 1);
+    }
+    setCart(newCart);
+  }
+
+  let totalPrice = 0;
+  cart.forEach((item) => {
+    totalPrice += item.price * item.quantity;
+  });
 
   return (
     <div className="App">
@@ -116,11 +155,12 @@ const App = () => {
           <Modal.Title>Shopping Cart</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <CartList cart={cart} deleteItem={deleteItem} /> 
+          <CartList cart={cart} deleteItem={deleteItem} editQuantity={editQuantity} /> {/*add editQuantity to Cart List props*/}
         </Modal.Body>
         <Modal.Footer>
           <button className="btn btn-primary" onClick={() => setShow(false)}>Close</button>
         </Modal.Footer>
+        <WhatsAppButton message={`Hello! Welcome to Shopez! Here is the list of products you have in your cart and their total value: ${ cart.map((item) => `${item.name} - ${item.quantity} - $${item.price * item.quantity}`).join(', ') }. Total Value: $${totalPrice}`} />
       </Modal>
     </div>
   );
