@@ -10,7 +10,7 @@ const Header = ({ cart, setShow }) => {
   }, 0);
 
   return (
-    <header className="bg-dark text-white">
+    <header className="bg-dark text-white fixed-top">
       <div className="container d-flex justify-content-between align-items-center py-3">
         <div className="company-name h3 mb-0">Shopez</div>
         <div className="cart text-end">
@@ -23,10 +23,9 @@ const Header = ({ cart, setShow }) => {
   )
 };
 
-export default Header;
-
 Header.propTypes = {
   cart: PropTypes.array.isRequired,
   setShow: PropTypes.func.isRequired,
 };
 
+export default Header;
