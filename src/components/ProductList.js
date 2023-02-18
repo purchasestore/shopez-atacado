@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const ProductList = ({ addToCart }) => {
@@ -8,6 +8,15 @@ const ProductList = ({ addToCart }) => {
     { name: 'Product 3', price: 24.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/saia-saia-argola-sexy--p-1663959870905.jpeg', quantity: 0 },
     { name: 'Product 4', price: 14.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/biquinis-biquini-fio-com-argola-1676509827180.jpeg', quantity: 0 },
   ];
+
+  const [quantity, setQuantity] = useState(1);
+
+  const handleQuantityChange = (e) => {
+    const value = parseInt(e.target.value);
+    if (!isNaN(value)) {
+      setQuantity(value);
+    }
+  };
 
   return (
     <div className="container my-4">
@@ -21,7 +30,7 @@ const ProductList = ({ addToCart }) => {
                 <span className="product-price h5">${product.price.toFixed(2)}</span>
                 <div className="form-group">
                   <label htmlFor="size">Size</label>
-                  <select className="form-control" id="size" onChange={(e) => addToCart({ ...product, size: e.target.value })}>
+                  <select className="form-control" id="size">
                     {product.size.map((size) => (
                       <option key={size} value={size}>{size}</option>
                     ))}
@@ -29,9 +38,9 @@ const ProductList = ({ addToCart }) => {
                 </div>
                 <div className="form-group">
                   <label htmlFor="quantity">Quantity</label>
-                  <input type="number" className="form-control" id="quantity" min="1" onChange={(e) => {if (e.target.value > 0){ addToCart({ ...product, quantity: parseInt(e.target.value), size: e.target.parentNode.previousSibling.value })}}}/>
+                  <input type="number" className="form-control" id="quantity" min="1" value={quantity} onChange={handleQuantityChange} />
                 </div>
-                <button className="btn btn-primary" onClick={() => addToCart({ ...product, quantity: 1, size: product.size[0] })} disabled={!product.quantity}>Add to cart</button>
+                <button className="btn btn-primary" onClick={() => addToCart({ ...product, quantity, size: document.getElementById('size').value })} disabled={quantity < 1}>Add to cart</button>
               </div>
             </div>
           </div>
