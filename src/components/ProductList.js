@@ -2,19 +2,23 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const ProductList = ({ addToCart }) => {
-  const products = [
-    { name: 'Product 1', price: 10.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr--p-1656093927804.jpeg', quantity: 0 },
-    { name: 'Product 2', price: 19.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr--p-1673444046549.png', quantity: 0 },
-    { name: 'Product 3', price: 24.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/saia-saia-argola-sexy--p-1663959870905.jpeg', quantity: 0 },
-    { name: 'Product 4', price: 14.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/biquinis-biquini-fio-com-argola-1676509827180.jpeg', quantity: 0 },
-  ];
+  const [products, setProducts] = useState([
+    { name: 'Product 1', price: 10.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr--p-1656093927804.jpeg', quantity: 0, id: 1 },
+    { name: 'Product 2', price: 19.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr--p-1673444046549.png', quantity: 0, id: 2 },
+    { name: 'Product 3', price: 24.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/saia-saia-argola-sexy--p-1663959870905.jpeg', quantity: 0, id: 3 },
+    { name: 'Product 4', price: 14.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/biquinis-biquini-fio-com-argola-1676509827180.jpeg', quantity: 0, id: 4 },
+  ]);
 
-  const [quantity, setQuantity] = useState(1);
-
-  const handleQuantityChange = (e) => {
+  const handleQuantityChange = (productId, e) => {
     const value = parseInt(e.target.value);
-    if (!isNaN(value)) {
-      setQuantity(value);
+    if (!isNaN(value) && value >= 1) {
+      const updatedProducts = products.map(product => {
+        if (product.id === productId) {
+          product.quantity = value;
+        }
+        return product;
+      });
+      setProducts(updatedProducts);
     }
   };
 
@@ -38,9 +42,9 @@ const ProductList = ({ addToCart }) => {
                 </div>
                 <div className="form-group">
                   <label htmlFor="quantity">Quantity</label>
-                  <input type="number" className="form-control" id="quantity" min="1" value={quantity} onChange={handleQuantityChange} />
+                  <input type="number" className="form-control" key={product.id} id={`quantity${product.id}`} min="1" value={product.quantity} onChange={(e) => handleQuantityChange(product.id, e)} />
                 </div>
-                <button className="btn btn-primary" onClick={() => addToCart({ ...product, quantity, size: document.getElementById('size').value })} disabled={quantity < 1}>Add to cart</button>
+                <button className="btn btn-primary" onClick={() => addToCart({ ...product, quantity: product.quantity, size: document.getElementById('size').value })} disabled={product.quantity < 1}>Add to cart</button>
               </div>
             </div>
           </div>
