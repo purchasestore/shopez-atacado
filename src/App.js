@@ -29,10 +29,10 @@ const Header = ({ cart, setShow }) => {
 //Product list component
 const ProductList = ({ addToCart }) => { //add addToCart as a prop
   const products = [
-    { name: 'Product 1', price: 10.99, size: 'M', image: 'https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr--p-1656093927804.jpeg' },
-    { name: 'Product 2', price: 19.99, size: 'PP', image: 'https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr--p-1673444046549.png' },
-    { name: 'Product 3', price: 24.99, size: 'P', image: 'https://17741.cdn.simplo7.net/static/17741/sku/saia-saia-argola-sexy--p-1663959870905.jpeg' },
-    { name: 'Product 4', price: 14.99, size: 'G', image: 'https://17741.cdn.simplo7.net/static/17741/sku/biquinis-biquini-fio-com-argola-1676509827180.jpeg' },
+    { name: 'Product 1', price: 10.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr--p-1656093927804.jpeg' },
+    { name: 'Product 2', price: 19.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr--p-1673444046549.png' },
+    { name: 'Product 3', price: 24.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/saia-saia-argola-sexy--p-1663959870905.jpeg' },
+    { name: 'Product 4', price: 14.99, size: ['PP','P','M'], image: 'https://17741.cdn.simplo7.net/static/17741/sku/biquinis-biquini-fio-com-argola-1676509827180.jpeg' },
   ];
 
   return (
@@ -48,9 +48,9 @@ const ProductList = ({ addToCart }) => { //add addToCart as a prop
                 <div className="form-group">
                   <label htmlFor="size">Size</label>
                   <select className="form-control" id="size" onChange={(e) => addToCart({ ...product, size: e.target.value })}>
-                    <option value="PP">PP</option>
-                    <option value="P">P</option>
-                    <option value="M">M</option>
+                    {product.size.map((size) => (
+                      <option key={size} value={size}>{size}</option>
+                    ))}
                   </select>
                 </div>
                 <div className="form-group">
