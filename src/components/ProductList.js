@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import image1 from '../images/product_1.png';
+import image2 from '../images/product_2.png';
+import image3 from '../images/product_3.png';
+import image4 from '../images/product_4.png';
+
 
 const ProductList = ({ addToCart }) => {
   const products = [
-    { id: 1, name: 'Product 1', price: 10.99, size: ['PP','P','M'], image: 'src/images/product_1.png', quantity: 0 },
-    { id: 2, name: 'Product 2', price: 19.99, size: ['PP','P','M'], image: 'src/images/product_2.png', quantity: 0 },
-    { id: 3, name: 'Product 3', price: 24.99, size: ['PP','P','M'], image: 'src/images/product_3.png', quantity: 0 },
-    { id: 4, name: 'Product 4', price: 14.99, size: ['PP','P','M'], image: 'src/images/product_4.png', quantity: 0 },
+    { id: 1, name: 'Product 1', price: 10.99, size: ['PP','P','M'], image: image1, quantity: 0 },
+    { id: 2, name: 'Product 2', price: 19.99, size: ['PP','P','M'], image: image2, quantity: 0 },
+    { id: 3, name: 'Product 3', price: 24.99, size: ['PP','P','M'], image: image3, quantity: 0 },
+    { id: 4, name: 'Product 4', price: 14.99, size: ['PP','P','M'], image: image4, quantity: 0 },
   ];
 
   const [quantity, setQuantity] = useState({});
