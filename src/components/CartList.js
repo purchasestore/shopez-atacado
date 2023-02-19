@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const CartList = ({ cart, deleteItem, editQuantity }) => {
-  //calculate total value of cart
+  // calculate total value of cart
   const total = cart.reduce((acc, cur) => {
     if (cur.quantity > 0) {
       return acc + cur.price * cur.quantity;
     }
     return acc;
   }, 0);
+
+  useEffect(() => {
+    // save cart to local storage whenever it changes
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <div className="cart-list container my-4">
