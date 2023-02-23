@@ -53,15 +53,15 @@ const App = () => {
       <ProductList addToCart={addToCart} />
       <Modal show={show} onHide={() => setShow(false)}> 
         <Modal.Header closeButton>
-          <Modal.Title>Shopping Cart</Modal.Title>
+          <Modal.Title>Carrinho</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <CartList cart={cart} deleteItem={deleteItem} editQuantity={editQuantity} /> {/*add editQuantity to Cart List props*/}
         </Modal.Body>
         <Modal.Footer>
-          <button className="btn btn-primary" onClick={() => setShow(false)}>Close</button>
+          <button className="btn btn-primary" onClick={() => setShow(false)}>Fechar</button>
         </Modal.Footer>
-        <WhatsAppButton message={`Hello! Welcome to Shopez! Here is the list of products you have in your cart and their total value: ${ cart.map((item) => `${item.name} - ${item.quantity} - $${item.price * item.quantity}`).join(', ') }. Total Value: $${totalPrice}`} />
+        <WhatsAppButton message={`Olá Larissa! Aqui está a minha lista de compras e o valor total: ${ cart.map((item) => `${item.name} - ${item.quantity} - R$${item.price * item.quantity}`).join(', ') }. Valor Total: R$${totalPrice}`} />
       </Modal>
     </div>
   );

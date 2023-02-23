@@ -23,13 +23,13 @@ const CartList = ({ cart, deleteItem, editQuantity }) => {
           <div className="col-auto">
             <input type="number" className="form-control form-control-sm" min="1" style={{ width: "60px" }} onChange={(e) => editQuantity(product, e.target.value)} value={product.quantity} />
           </div>
-          <div className="col-auto">${(product.price * product.quantity).toFixed(2)}</div>
-          <div className="col-auto"><button className="btn btn-primary" onClick={() => deleteItem(product)}>Delete</button></div>
+          <div className="col-auto">R${(product.price * product.quantity).toFixed(2)}</div>
+          <div className="col-auto"><button className="btn btn-primary" onClick={() => deleteItem(product)}>Deletar</button></div>
         </div>
       ))}
       <div className="cart-item row py-2">
         <div className="col font-weight-bold">Total</div>
-        <div className="col-auto font-weight-bold">${total.toFixed(2)}</div>
+        <div className="col-auto font-weight-bold">R${total.toFixed(2)}</div>
       </div>
     </div>
   );
