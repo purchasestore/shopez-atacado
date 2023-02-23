@@ -13,6 +13,7 @@ const Header = ({ cart, setShow }) => {
     <header className="bg-dark text-white fixed-top">
       <div className="container d-flex justify-content-between align-items-center py-3">
         <div className="company-name h3 mb-0">Purchase Atacado</div>
+        <p className="mb-0">Mínimo 10 peças no atacado!</p>
         <div className="cart text-end">
           <span className="cart-count me-3">{cart.length} produtos</span>
           <span className="cart-total">R${total.toFixed(2)}</span>
