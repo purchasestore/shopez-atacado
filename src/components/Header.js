@@ -20,7 +20,7 @@ const Header = ({ cart, setShow }) => {
         <div className="company-name h3 mb-0">Purchase Atacado</div>
         <p className="mb-0">Mínimo 10 peças no atacado!</p>
         <div className="cart text-end">
-          <span className="cart-count me-3">Você já selecionou: {totalQuantity} {totalQuantity === 1 ? 'item' : 'itens'} itens.</span>
+          <span className="cart-count me-3">Você já selecionou: {totalQuantity} {totalQuantity === 1 ? 'item' : 'itens'}.</span>
           <span className="cart-total">R${total.toFixed(2)}</span>
             <button className="btn btn-primary btn-sm" onClick={() => setShow(true)}>
               Ver Carrinho
