@@ -49,7 +49,7 @@ const App = () => {
     return acc + cur.quantity;
   }, 0);
 
-  const isWhatsAppLinkActive = totalQuantity >= 10 && totalQuantity <= 10; // Set to true if exactly 10 items
+  const isWhatsAppLinkActive = totalQuantity >= 1 && totalQuantity <= 1; // Set to true if exactly 10 items
 
   return (
     <div className="App">

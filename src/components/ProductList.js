@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import image1 from '../images/product_1.jpeg';
+import image2 from '../images/product_2.png';
+import image3 from '../images/product_3.png';
 
 const ProductList = ({ addToCart }) => {
-  const products = [{"id": 1, "name": "MACACÃO FECHADO MANGA COMPRIDA TUMBLER", "price": 55.0, "size": ["PP", "P", "M"], "image": "https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr--p-1673444046549.png", "quantity": 0}, {"id": 2, "name": "CONJUNTO SAIA COM FENDA + TOP MANGA LONGA", "price": 55.0, "size": ["PP", "P", "M"], "image": "https://17741.cdn.simplo7.net/static/17741/sku/vestido-conjunto-saia-com-fenda-top-manga-longa-1673585159724.jpg", "quantity": 0}, {"id": 3, "name": "VESTIDO SEXY DOMINANTE ", "price": 55.0, "size": ["PP", "P", "M"], "image": "https://17741.cdn.simplo7.net/static/17741/sku/vestido-vestido-sexy-dominante--p-1676509943812.jpeg", "quantity": 0}, {"id": 4, "name": "VESTIDO LONGO VAZADO FRONTAL", "price": 55.0, "size": ["PP", "P", "M"], "image": "https://17741.cdn.simplo7.net/static/17741/sku/vestido-vestido-longo-vazado-frontal-1673585259238.jpg", "quantity": 0}, {"id": 5, "name": "CONJUNTO SAIA MIDI + CROPPED MANGA ÚNICA", "price": 55.0, "size": ["PP", "P", "M"], "image": "https://17741.cdn.simplo7.net/static/17741/sku/vestido-conjunto-saia-midi-cropped-manga-unica-1670277043485.jpeg", "quantity": 0}, {"id": 6, "name": "VESTIDO LONGO TOP + SAIA FENDA", "price": 55.0, "size": ["PP", "P", "M"], "image": "https://17741.cdn.simplo7.net/static/17741/sku/vestido-vestido-longo-top-saia-fenda-1671657585217.jpeg", "quantity": 0}, {"id": 7, "name": "VESTIDO LONGO FENDA COM ARGOLA", "price": 55.0, "size": ["PP", "P", "M"], "image": "https://17741.cdn.simplo7.net/static/17741/sku/vestido-vestido-longo-fenda-com-argola-1671117690491.jpeg", "quantity": 0}, {"id": 8, "name": "VESTIDO ABERTO CINTURA FRANZIDO", "price": 55.0, "size": ["PP", "P", "M"], "image": "https://17741.cdn.simplo7.net/static/17741/sku/vestido-vestido-aberto-cintura-franzid--p-1666364027814.jpeg", "quantity": 0}];
+  const products = [{"id": 1, "name": "Copo da Felicidade", "price": 15.0, "size": ["Morango", "Chocolate", "Maçã", "Maracujá", "Abacaxi com Côco", "Banana", "Paçoca" ], "image": image1, "quantity": 0},
+  {"id": 2, "name": "Docinhos", "price": 3.5, "size": ["Brigadeiro", "Branquinho", "Casadinho"], "image": image2, "quantity": 0},
+  {"id": 3, "name": "Sagu", "price": 8, "size": ["Pote"], "image": image3, "quantity": 0}];
 
   const [quantity, setQuantity] = useState({});
   const [selectedSize, setSelectedSize] = useState({});

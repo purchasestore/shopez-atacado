@@ -17,8 +17,8 @@ const Header = ({ cart, setShow }) => {
   return (
     <header className="bg-dark text-white fixed-top">
       <div className="container d-flex justify-content-between align-items-center py-3">
-        <div className="company-name h3 mb-0">Purchase Atacado</div>
-        <p className="mb-0">Mínimo 10 peças no atacado!</p>
+        <div className="company-name h3 mb-0">Memórias Doces</div>
+        {/* <p className="mb-0">Mínimo 10 peças no atacado!</p> */}
         <div className="cart text-end">
           <span className="cart-count me-3">Você já selecionou: {totalQuantity} {totalQuantity === 1 ? 'item' : 'itens'}.</span>
           <span className="cart-total">Valor Total: R${total.toFixed(2)}</span>
