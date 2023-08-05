@@ -7,7 +7,7 @@ import image3 from '../images/product_3.png';
 const ProductList = ({ addToCart }) => {
   const products = [{"id": 1, "name": "Copo da Felicidade - Peso: 300g", "price": 15.0, "size": ["Morango", "Chocolate", "Maçã", "Maracujá", "Abacaxi com Côco", "Banana", "Paçoca" ], "image": image1, "quantity": 0},
   {"id": 2, "name": "Docinhos - Peso: 30g", "price": 3.5, "size": ["Brigadeiro", "Branquinho", "Casadinho"], "image": image2, "quantity": 0},
-  {"id": 3, "name": "Sagu - Peso 200g", "price": 8, "size": ["Pote"], "image": image3, "quantity": 0}];
+  {"id": 3, "name": "Sagu - Peso: 200g", "price": 8, "size": ["Pote"], "image": image3, "quantity": 0}];
 
   const [quantity, setQuantity] = useState({});
   const [selectedSize, setSelectedSize] = useState({});
