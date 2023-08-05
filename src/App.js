@@ -44,13 +44,7 @@ const App = () => {
   cart.forEach((item) => {
     totalPrice += item.price * item.quantity;
   });
-
-  const totalQuantity = cart.reduce((acc, cur) => {
-    return acc + cur.quantity;
-  }, 0);
-
-  const isWhatsAppLinkActive = totalQuantity >= 1 && totalQuantity <= 1; // Set to true if exactly 10 items
-
+  
   return (
     <div className="App">
       <Header cart={cart} setShow={setShow} />
@@ -65,12 +59,7 @@ const App = () => {
         <Modal.Footer>
           <button className="btn btn-primary" onClick={() => setShow(false)}>Fechar</button>
         </Modal.Footer>
-        {/* Show the WhatsApp link in the cart modal */}
-        {isWhatsAppLinkActive ? (
-          <WhatsAppButton message={`Olá Larissa! Aqui está a minha lista de compras e o valor total: ${cart.map((item) => `${item.name} - ${item.quantity} - R$${item.price * item.quantity}`).join(', ')}. Valor Total: R$${totalPrice}`} />
-        ) : (
-          <button className="btn btn-secondary" disabled>Mandar mensagem WhatsApp</button>
-        )}
+          <WhatsAppButton message={`Olá Marta! Aqui está a minha lista de compras e o valor total:  ${cart.map((item) => `${item.name} - ${item.quantity} - R$${item.price * item.quantity}`).join(', ')}. Valor Total: R$${totalPrice}`} />
       </Modal>
     </div>
   );
