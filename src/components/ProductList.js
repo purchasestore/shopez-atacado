@@ -40,18 +40,6 @@ const ProductList = ({ addToCart }) => {
     "quantity": 0
   },
   {
-    "id": 5,
-    "name": "CONJUNTO SAIA MIDI + CROPPED MANGA ÚNICA",
-    "price": 55,
-    "size": [
-      "PP",
-      "P",
-      "M"
-    ],
-    "image": "https://17741.cdn.simplo7.net/static/17741/sku/vestido-conjunto-saia-midi-cropped-manga-unica-1670277043485.jpeg",
-    "quantity": 0
-  },
-  {
     "id": 6,
     "name": "VESTIDO LONGO TOP + SAIA FENDA",
     "price": 55,
