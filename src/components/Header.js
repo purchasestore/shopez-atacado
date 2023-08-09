@@ -19,6 +19,9 @@ const Header = ({ cart, setShow }) => {
       <div className="container d-flex justify-content-between align-items-center py-3">
         <div className="company-name h3 mb-0">Purchase Atacado</div>
         <p className="mb-0">Mínimo 10 peças no atacado!</p>
+        <p className="mb-0">Entrega 24h</p>
+        <p className="mb-0">Entrega por motoboy em SP capital - FRETE FIXO R$20</p>
+        <p className="mb-0">Entregamos em excursões de SP capital</p>
         <div className="cart text-end">
           <span className="cart-count me-3">Você já selecionou: {totalQuantity} {totalQuantity === 1 ? 'item' : 'itens'}.</span>
           <span className="cart-total">Valor Total: R${total.toFixed(2)}</span>
