@@ -2,18 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Header = ({ cart, setShow }) => {
-  const total = cart.reduce((acc, cur) => {
-    if (cur.quantity > 0) {
-      return acc + cur.price * cur.quantity;
-    }
-    return acc;
-  }, 0);
-
-  const totalQuantity = cart.reduce((acc, cur) => {
-    return acc + cur.quantity;
-  }, 0);
-
-
+  const { total, totalQuantity } = cart.reduce((acc, cur) => {
+    return {
+      total: acc.total + (cur.quantity > 0 ? cur.price * cur.quantity : 0),
+      totalQuantity: acc.totalQuantity + cur.quantity
+    };
+  }, { total: 0, totalQuantity: 0 });
+  
   return (
     <header className="bg-dark text-white">
       <div className="container d-flex justify-content-between align-items-center py-3">

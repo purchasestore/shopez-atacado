@@ -19,7 +19,7 @@ const CartList = ({ cart, deleteItem, editQuantity }) => {
     <div className="cart-list container my-4">
       {cart.map((product) => (
         <div className="cart-item row py-2" key={`${product.name}-${product.size}`}>
-          <div className="col">{product.name} - {product.size}</div>
+          <div className="col">{product.name} - {product.size} - {product.color}</div>
           <div className="col-auto">
             <input type="number" className="form-control form-control-sm" min="1" style={{ width: "60px" }} onChange={(e) => editQuantity(product, e.target.value)} value={product.quantity} />
           </div>

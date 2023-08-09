@@ -121,16 +121,16 @@ const ProductList = ({ addToCart }) => {
   const [quantity, setQuantity] = useState({});
   const [selectedSize, setSelectedSize] = useState({});
 
-  const handleQuantityChange = (id, e) => {
+  const handleQuantityChange = (name, e) => {
     const value = parseInt(e.target.value);
     if (!isNaN(value)) {
-      setQuantity((prevQuantity) => ({ ...prevQuantity, [id]: value }));
+      setQuantity((prevQuantity) => ({ ...prevQuantity, [name]: value }));
     }
   };
 
-  const handleSizeChange = (id, e) => {
+  const handleSizeChange = (name, e) => {
     const value = e.target.value;
-    setSelectedSize((prevSelectedSize) => ({ ...prevSelectedSize, [id]: value }));
+    setSelectedSize((prevSelectedSize) => ({ ...prevSelectedSize, [name]: value }));
   };
 
   return (
@@ -139,10 +139,10 @@ const ProductList = ({ addToCart }) => {
         {products.map((product) => (
           <div className="col-md-6 col-lg-4 mb-4" key={product.name}>
             <div className="card h-100">
+              <div className="card-body">
               <img src={product.image} alt={product.name} className="card-img-top" style={{width: "100%", height: "auto"}} />
-              <div className="card-body d-flex flex-column">
-                <h3 className="card-title">{product.name}</h3>
-                <span className="product-price h5">R${product.price.toFixed(2)}</span>
+                <h5 className="card-title">{product.name}</h5>
+                <p className="card-text">${product.price}</p>
                 <div className="form-group">
                   <label htmlFor={`color${product.id}`}>Cor</label>
                   <select className="form-control" id={`color${product.id}`} value={selectedSize[product.id]} onChange={(e) => handleSizeChange(product.id, e)}>
@@ -152,18 +152,33 @@ const ProductList = ({ addToCart }) => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor={`size${product.id}`}>Tamanho</label>
-                  <select className="form-control" id={`size${product.id}`} value={selectedSize[product.id]} onChange={(e) => handleSizeChange(product.id, e)}>
-                    {product.size.map((size) => (
-                      <option key={size} value={size}>{size}</option>
-                    ))}
+                  <label htmlFor={`size${product.name}`}>Size</label>
+                  <select 
+                    className="form-control" 
+                    id={`size${product.name}`} 
+                    value={selectedSize[product.name] || product.size[0]} 
+                    onChange={(e) => handleSizeChange(product.name, e)}
+                  >
+                    {product.size.map((size) => <option key={size} value={size}>{size}</option>)}
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor={`quantity${product.id}`}>Quantidade</label>
-                  <input type="number" className="form-control" id={`quantity${product.id}`} min="1" value={quantity[product.id] || product.quantity} onChange={(e) => handleQuantityChange(product.id, e)} />
+                  <label htmlFor={`quantity${product.name}`}>Quantidade</label>
+                  <input 
+                    type="number" 
+                    className="form-control" 
+                    id={`quantity${product.name}`} 
+                    value={quantity[product.name]}
+                    onChange={(e) => handleQuantityChange(product.name, e)} 
+                  />
                 </div>
-                <button className="btn btn-primary" onClick={() => addToCart({ ...product, quantity: quantity[product.id] || product.quantity, size: selectedSize[product.id] || product.size[0] })} disabled={(quantity[product.id] || product.quantity) < 1}>Adicionar ao carrinho</button>
+                <button 
+                  className="btn btn-primary" 
+                  onClick={() => addToCart({ ...product, quantity: quantity[product.name] || 0, size: selectedSize[product.name] || product.size[0] })}
+                  disabled={!(quantity[product.name] > 0)}
+                >
+                  Adicionar ao carrinho
+                </button>
               </div>
             </div>
           </div>
@@ -173,8 +188,8 @@ const ProductList = ({ addToCart }) => {
   );
 };
 
-export default ProductList;
-
 ProductList.propTypes = {
   addToCart: PropTypes.func.isRequired,
 };
+
+export default ProductList;
