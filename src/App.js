@@ -12,25 +12,40 @@ const App = () => {
   const [show, setShow] = useState(false);
 
   const addToCart = (product) => {
-    let itemIndex = cart.findIndex((item) => item.name === product.name && item.size === product.size);
+    let itemIndex = cart.findIndex((item) => 
+      item.name === product.name && 
+      item.size === product.size && 
+      item.color === product.color
+    );
+
     if (itemIndex === -1) {
       setCart([...cart, product]);
     } else {
       let newCart = [...cart];
-      newCart[itemIndex].quantity = product.quantity;
+      newCart[itemIndex].quantity += product.quantity; // Increment the quantity if the same item is added again
       setCart(newCart);
     }
   };
 
   const deleteItem = (product) => {
-    let itemIndex = cart.findIndex((item) => item.name === product.name && item.size === product.size);
+    let itemIndex = cart.findIndex((item) => 
+      item.name === product.name && 
+      item.size === product.size &&
+      item.color === product.color
+    );
+
     let newCart = [...cart];
     newCart.splice(itemIndex, 1);
     setCart(newCart);
   };
 
   const editQuantity = (product, newQuantity) => {
-    let itemIndex = cart.findIndex((item) => item.name === product.name && item.size === product.size);
+    let itemIndex = cart.findIndex((item) => 
+      item.name === product.name && 
+      item.size === product.size &&
+      item.color === product.color
+    );
+
     let newCart = [...cart];
     if (newQuantity > 0) {
       newCart[itemIndex].quantity = newQuantity;
@@ -65,9 +80,8 @@ const App = () => {
         <Modal.Footer>
           <button className="btn btn-primary" onClick={() => setShow(false)}>Fechar</button>
         </Modal.Footer>
-        {/* Show the WhatsApp link in the cart modal */}
         {isWhatsAppLinkActive ? (
-          <WhatsAppButton message={`Olá Larissa! Aqui está a minha lista de compras e o valor total: ${cart.map((item) => `${item.name} - ${item.quantity} - R$${item.price * item.quantity}`).join(', ')}. Valor Total: R$${totalPrice}`} />
+          <WhatsAppButton message={`Olá Larissa! Aqui está a minha lista de compras e o valor total: ${cart.map((item) => `${item.name} - ${item.color} - ${item.quantity} - R$${item.price * item.quantity}`).join(', ')}. Valor Total: R$${totalPrice}`} />
         ) : (
           <button className="btn btn-secondary" disabled>Mandar mensagem WhatsApp</button>
         )}
