@@ -81,7 +81,14 @@ const App = () => {
           <button className="btn btn-primary" onClick={() => setShow(false)}>Fechar</button>
         </Modal.Footer>
         {isWhatsAppLinkActive ? (
-          <WhatsAppButton message={`Olá Larissa! Aqui está a minha lista de compras e o valor total: ${cart.map((item) => `${item.name} - ${item.color} - ${item.quantity} - R$${item.price * item.quantity}`).join(', ')}. Valor Total: R$${totalPrice}`} />
+          <WhatsAppButton 
+          message={
+            `Olá Larissa! Aqui está a minha lista de compras e o valor total:\n` + 
+            `${cart.map((item) => `${item.name} - ${item.color} - ${item.size} - ${item.quantity} - R$${item.price * item.quantity}`).join('\n')}` + 
+            `\nValor Total: R$${totalPrice}`
+          } 
+        />
+        
         ) : (
           <button className="btn btn-secondary" disabled>Mandar mensagem WhatsApp</button>
         )}
