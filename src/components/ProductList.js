@@ -64,7 +64,7 @@ const ProductList = ({ addToCart }) => {
       "color": ["Preto"],
       "size": ["PP", "P", "M", "G", "GG"],
       "price": 59.90,
-      "image": "https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr-p-1682695740167.jpeg",
+      "image": "https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-macacao-fechado-manga-comprida-tumblr-p-1682695739878.jpeg",
       "quantity": 0
     },
     {
