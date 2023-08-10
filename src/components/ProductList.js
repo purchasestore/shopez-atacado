@@ -120,6 +120,7 @@ const ProductList = ({ addToCart }) => {
 
   const [quantity, setQuantity] = useState({});
   const [selectedSize, setSelectedSize] = useState({});
+  const [selectedColor, setSelectedColor] = useState({});
 
   const handleQuantityChange = (name, e) => {
     const value = parseInt(e.target.value);
@@ -127,6 +128,11 @@ const ProductList = ({ addToCart }) => {
       setQuantity((prevQuantity) => ({ ...prevQuantity, [name]: value }));
     }
   };
+
+  const handleColorChange = (name, e) => {
+    const value = e.target.value;
+    setSelectedColor((prevSelectedColor) => ({ ...prevSelectedColor, [name]: value }));
+  };  
 
   const handleSizeChange = (name, e) => {
     const value = e.target.value;
@@ -142,13 +148,16 @@ const ProductList = ({ addToCart }) => {
               <div className="card-body">
               <img src={product.image} alt={product.name} className="card-img-top" style={{width: "100%", height: "auto"}} />
                 <h5 className="card-title">{product.name}</h5>
-                <p className="card-text">${product.price}</p>
+                <span className="product-price h5">R${product.price.toFixed(2)}</span>
                 <div className="form-group">
-                  <label htmlFor={`color${product.id}`}>Cor</label>
-                  <select className="form-control" id={`color${product.id}`} value={selectedSize[product.id]} onChange={(e) => handleSizeChange(product.id, e)}>
-                    {product.color.map((color) => (
-                      <option key={color} value={color}>{color}</option>
-                    ))}
+                  <label htmlFor={`color${product.name}`}>Color</label>
+                  <select 
+                    className="form-control" 
+                    id={`color${product.name}`} 
+                    value={selectedColor[product.name] || product.color[0]} 
+                    onChange={(e) => handleColorChange(product.name, e)}
+                  >
+                    {product.color.map((color) => <option key={color} value={color}>{color}</option>)}
                   </select>
                 </div>
                 <div className="form-group">
@@ -173,12 +182,17 @@ const ProductList = ({ addToCart }) => {
                   />
                 </div>
                 <button 
-                  className="btn btn-primary" 
-                  onClick={() => addToCart({ ...product, quantity: quantity[product.name] || 0, size: selectedSize[product.name] || product.size[0] })}
-                  disabled={!(quantity[product.name] > 0)}
-                >
-                  Adicionar ao carrinho
-                </button>
+                    className="btn btn-primary" 
+                    onClick={() => addToCart({ 
+                      ...product, 
+                      quantity: quantity[product.name] || 0, 
+                      size: selectedSize[product.name] || product.size[0], 
+                      color: selectedColor[product.name] || product.color[0] 
+                    })}
+                    disabled={!(quantity[product.name] > 0)}
+                  >
+                    Adicionar ao carrinho
+                  </button>
               </div>
             </div>
           </div>
