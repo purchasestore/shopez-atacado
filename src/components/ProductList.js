@@ -117,7 +117,6 @@ const ProductList = ({ addToCart }) => {
     }
   ]
   ;
-
   const [quantity, setQuantity] = useState({});
   const [selectedSize, setSelectedSize] = useState({});
   const [selectedColor, setSelectedColor] = useState({});
@@ -132,11 +131,18 @@ const ProductList = ({ addToCart }) => {
   const handleColorChange = (name, e) => {
     const value = e.target.value;
     setSelectedColor((prevSelectedColor) => ({ ...prevSelectedColor, [name]: value }));
+    resetQuantity(name);
   };  
 
   const handleSizeChange = (name, e) => {
     const value = e.target.value;
     setSelectedSize((prevSelectedSize) => ({ ...prevSelectedSize, [name]: value }));
+    resetQuantity(name);
+  };
+
+  // Function to reset the quantity to 0 for a particular product
+  const resetQuantity = (name) => {
+    setQuantity((prevQuantity) => ({ ...prevQuantity, [name]: 0 }));
   };
 
   return (
@@ -177,7 +183,7 @@ const ProductList = ({ addToCart }) => {
                     type="number" 
                     className="form-control" 
                     id={`quantity${product.name}`} 
-                    value={quantity[product.name]}
+                    value={quantity[product.name] || ''}
                     onChange={(e) => handleQuantityChange(product.name, e)} 
                   />
                 </div>
