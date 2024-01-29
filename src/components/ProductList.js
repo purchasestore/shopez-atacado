@@ -169,7 +169,6 @@ const ProductList = ({ addToCart }) => {
       "price": 30.00,
       "size": ["PP", "P", "M", "G", "GG"],
       "images": [
-        "https://17741.cdn.simplo7.net/static/17741/sku/biquinis-biquini-de-marquinha-de-fita-fio-duplo-com-calcinha-1699552531553.png",
         "https://i.pinimg.com/736x/9d/6e/7f/9d6e7f37c8a8d448e6f7e4106f87e679.jpg",
       ],
       "quantity": 0
