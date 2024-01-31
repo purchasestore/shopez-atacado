@@ -169,7 +169,7 @@ const ProductList = ({ addToCart }) => {
       "price": 30.00,
       "size": ["PP", "P", "M", "G", "GG"],
       "images": [
-        "https://i.pinimg.com/736x/9d/6e/7f/9d6e7f37c8a8d448e6f7e4106f87e679.jpg",
+        "https://i.pinimg.com/474x/f0/d5/63/f0d56375bf1baa552d441ffd75f82efe.jpg",
       ],
       "quantity": 0
     },
@@ -179,7 +179,7 @@ const ProductList = ({ addToCart }) => {
       "price": 30.00,
       "size": ["PP", "P", "M", "G", "GG"],
       "images": [
-        "https://17741.cdn.simplo7.net/static/17741/sku/biquinis-kit-3-biquinis-de-marquinha-fita-com-fio-duplo--p-1696598601782.png"
+        "https://i.pinimg.com/474x/dd/8a/43/dd8a435c829491a5d649e3f5cf603938.jpg"
       ],
       "quantity": 0
     },
@@ -189,7 +189,7 @@ const ProductList = ({ addToCart }) => {
       "price": 30.00,
       "size": ["PP", "P", "M", "G", "GG"],
       "images": [
-        "https://17741.cdn.simplo7.net/static/17741/sku/biquinis-kit-3-biquinis-de-marquinha-fita-com-fio-duplo--p-1696598217895.png"
+        "https://i.pinimg.com/474x/74/bc/73/74bc73ba87ad269e8622b187d29cfe91.jpg"
       ],
       "quantity": 0
     },
@@ -199,7 +199,7 @@ const ProductList = ({ addToCart }) => {
       "price": 30.00,
       "size": ["PP", "P", "M", "G", "GG"],
       "images": [
-        "https://17741.cdn.simplo7.net/static/17741/sku/biquinis-biquini-de-marquinha-de-fita-fio-duplo-com-calcinha-1699552526534.png"
+        "https://i.pinimg.com/474x/da/ff/e4/daffe46ebccb3194a64a7b298560f1e7.jpg"
       ],
       "quantity": 0
     }
