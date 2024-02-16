@@ -131,7 +131,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "VEST-LONG-TOP-SAI-FEND - VERMELHO",
       "color": ["VERMELHO"],
-      "price": 37.00,
+      "price": 35.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://17741.cdn.simplo7.net/static/17741/sku/vestido-vestido-longo-top-saia-fenda-1705337201985.jpg"
@@ -141,7 +141,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "VEST-LONG-TOP-SAI-FEND - NUDE",
       "color": ["NUDE"],
-      "price": 37.00,
+      "price": 35.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://17741.cdn.simplo7.net/static/17741/sku/vestido-vestido-longo-top-saia-fenda-1705337199849.jpg"
@@ -151,7 +151,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "VEST-LONG-TOP-SAI-FEND - BRANCO",
       "color": ["BRANCO"],
-      "price": 37.00,
+      "price": 35.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://17741.cdn.simplo7.net/static/17741/sku/vestido-vestido-longo-top-saia-fenda-1705337197474.jpg"
@@ -161,7 +161,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "VEST-LONG-TOP-SAI-FEND - PRETO",
       "color": ["PRETO"],
-      "price": 37.00,
+      "price": 35.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://17741.cdn.simplo7.net/static/17741/sku/vestido-vestido-longo-top-saia-fenda-1705337195710.jpg"
