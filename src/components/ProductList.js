@@ -50,7 +50,7 @@ const ProductList = ({ addToCart }) => {
       "price": 40.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
-        "https://dcdn.mitiendanube.com/stores/004/178/209/products/52-026957c0ea7333c99317068568140505-640-0.webp",
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/design-sem-nome-2023-12-05t132944-783-a899e30f40dff4372217059861157844-640-0.webp",
       ],
       "quantity": 0
     },
