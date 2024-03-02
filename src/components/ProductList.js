@@ -4,39 +4,108 @@ import PropTypes from 'prop-types';
 const ProductList = ({ addToCart }) => {
   const products = [
     {
-      "name": "VEST-FAIXA-ALCINHA",
-      "color": ["VERMELHO", "PRETO", "BRANCO"],
+      "name": "VEST-FAIXA-ALCINHA-VERMELHO",
+      "color": ["VERMELHO"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/62-d2931b23d9115afc9817072294729746-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "VEST-FAIXA-ALCINHA-PRETO",
+      "color": ["PRETO"],
       "price": 40.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/66-78525afca968f3345f17072294737337-1024-1024.webp",
-        "https://dcdn.mitiendanube.com/stores/004/178/209/products/64-a4b7021ab50e8f362817072294735797-1024-1024.webp"
       ],
       "quantity": 0
     },
     {
-      "name": "CONJ-MISS-TOP-SAIA",
-      "color": ["VERMELHO", "PRETO", "BRANCO"],
+      "name": "VEST-FAIXA-ALCINHA-BRANCO",
+      "color": ["BRANCO"],
       "price": 40.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
-        "https://dcdn.mitiendanube.com/stores/004/178/209/products/48-ef2de43cda68e4abbc17068579316299-1024-1024.webp",
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/63-8438ba0ebc54640d3217072294735135-640-0.webp",
       ],
       "quantity": 0
     },
     {
-      "name": "Conjunto Carnaval Top Torção Acinturado + Saia Tubinho",
-      "color": ["VERMELHO", "PRETO", "BRANCO", "NUDE"],
+      "name": "CONJ-MISS-TOP-SAIA-VERMELHO",
+      "color": ["VERMELHO"],
       "price": 40.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
-        "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_0316-c25e06153f99f97b4417066222569247-1024-1024.webp",
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/whatsapp-image-2024-03-02-at-12-57-58-2-e07ffeaaff17f3bad217093959186104-640-0.webp",
       ],
       "quantity": 0
     },
     {
-      "name": "Plus Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida",
-      "color": ["VERMELHO", "PRETO", "BRANCO", "NUDE"],
+      "name": "CONJ-MISS-TOP-SAIA-PRETO",
+      "color": ["PRETO"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/whatsapp-image-2024-03-02-at-12-57-58-1-603bade1c6477965a617093959188420-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "CONJ-MISS-TOP-SAIA-BRANCO",
+      "color": ["BRANCO"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/whatsapp-image-2024-03-02-at-12-57-58-1f0b6b0d43add2cd4517093959192327-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Conjunto Carnaval Top Torção Acinturado + Saia Tubinho-VERMELHO",
+      "color": ["VERMELHO"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_0242-2be936e753347dffce17066222561582-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Conjunto Carnaval Top Torção Acinturado + Saia Tubinho-PRETO",
+      "color": ["PRETO"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_0440-697a45b1c516969dbe17066222558992-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Conjunto Carnaval Top Torção Acinturado + Saia Tubinho-BRANCO",
+      "color": ["BRANCO"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_0556-81e246dc481eeecdf417066222564388-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Plus Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-PRETO",
+      "color": ["PRETO"],
+      "price": 40.00,
+      "size": ["G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/36-5150fd6ed2cabbabf117068578213550-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Plus Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-BRANCO",
+      "color": ["BRANCO"],
       "price": 40.00,
       "size": ["G"],
       "images": [
@@ -45,12 +114,82 @@ const ProductList = ({ addToCart }) => {
       "quantity": 0
     },
     {
-      "name": "VESTIDO-Floral-LONGO",
-      "color": ["PRETO", "BRANCO"],
+      "name": "Plus Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-VERMELHO",
+      "color": ["VERMELHO"],
       "price": 40.00,
+      "size": ["G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/32-d65f9646f75ca4361e17068578218575-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Plus Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-NUDE",
+      "color": ["NUDE"],
+      "price": 40.00,
+      "size": ["G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/25-289e3126cc9c4ae57317068578225904-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-PRETO",
+      "color": ["PRETO"],
+      "price": 70.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/52-026957c0ea7333c99317068568140505-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-BRANCO",
+      "color": ["BRANCO"],
+      "price": 70.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/58-e3a0872620d0e318d817068568140505-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-VERMELHO",
+      "color": ["VERMELHO"],
+      "price": 70.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_1017-53f66803c361c4504b17093967029614-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-NUDE",
+      "color": ["NUDE"],
+      "price": 70.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/55-57384d81c79d634a1417068568140519-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "VESTIDO-Floral-LONGO-PRETO",
+      "color": ["PRETO"],
+      "price": 70.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/design-sem-nome-2023-12-05t132944-783-a899e30f40dff4372217059861157844-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "VESTIDO-Floral-LONGO-BRANCO",
+      "color": ["BRANCO"],
+      "price": 70.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/design-sem-nome-2023-12-05t132815-696-259ea6ed790811801117059861154192-640-0.webp",
       ],
       "quantity": 0
     },
