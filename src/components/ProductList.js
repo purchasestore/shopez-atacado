@@ -4,6 +4,57 @@ import PropTypes from 'prop-types';
 const ProductList = ({ addToCart }) => {
   const products = [
     {
+      "name": "VEST-FAIXA-ALCINHA",
+      "color": ["VERMELHO", "PRETO", "BRANCO"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/66-78525afca968f3345f17072294737337-1024-1024.webp",
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/64-a4b7021ab50e8f362817072294735797-1024-1024.webp"
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "CONJ-MISS-TOP-SAIA",
+      "color": ["VERMELHO", "PRETO", "BRANCO"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/48-ef2de43cda68e4abbc17068579316299-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Conjunto Carnaval Top Torção Acinturado + Saia Tubinho",
+      "color": ["VERMELHO", "PRETO", "BRANCO", "NUDE"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_0316-c25e06153f99f97b4417066222569247-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Plus Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida",
+      "color": ["VERMELHO", "PRETO", "BRANCO", "NUDE"],
+      "price": 40.00,
+      "size": ["G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/29-ef711121f2af37752d17068578190101-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "VESTIDO-Floral-LONGO",
+      "color": ["PRETO", "BRANCO"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://dcdn.mitiendanube.com/stores/004/178/209/products/52-026957c0ea7333c99317068568140505-640-0.webp",
+      ],
+      "quantity": 0
+    },
+    {
       "name": "CONJ-REVEILLON-TOP-SAIA-BRANCO",
       "color": ["BRANCO"],
       "price": 75.00,
