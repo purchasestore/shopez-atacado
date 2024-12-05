@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import ImageModal from './ImageModal';
 
 const ProductList = ({ addToCart }) => {
   const products = [
@@ -525,6 +526,8 @@ const ProductList = ({ addToCart }) => {
   const [selectedSize, setSelectedSize] = useState({});
   const [selectedColor, setSelectedColor] = useState({});
   const [selectedImageIndex, setSelectedImageIndex] = useState({});
+  const [modalImage, setModalImage] = useState(null);
+  const [modalProductName, setModalProductName] = useState('');
 
   const handleQuantityChange = (name, e) => {
     const value = parseInt(e.target.value, 10);
@@ -561,6 +564,11 @@ const ProductList = ({ addToCart }) => {
     });
   };
 
+  const handleImageClick = (image, productName) => {
+    setModalImage(image);
+    setModalProductName(productName);
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -570,19 +578,29 @@ const ProductList = ({ addToCart }) => {
               <img
                 src={product.images[selectedImageIndex[product.name] || 0]}
                 alt={product.name}
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-cover cursor-pointer"
+                onClick={() => handleImageClick(
+                  product.images[selectedImageIndex[product.name] || 0],
+                  product.name
+                )}
               />
               {product.images.length > 1 && (
                 <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
                   <button 
                     className="px-3 py-1 bg-black bg-opacity-50 text-white rounded-lg hover:bg-opacity-75 transition duration-200"
-                    onClick={() => handleImageChange(product.name, 'prev')}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleImageChange(product.name, 'prev');
+                    }}
                   >
                     ←
                   </button>
                   <button 
                     className="px-3 py-1 bg-black bg-opacity-50 text-white rounded-lg hover:bg-opacity-75 transition duration-200"
-                    onClick={() => handleImageChange(product.name, 'next')}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleImageChange(product.name, 'next');
+                    }}
                   >
                     →
                   </button>
@@ -662,6 +680,13 @@ const ProductList = ({ addToCart }) => {
           </div>
         ))}
       </div>
+
+      <ImageModal 
+        image={modalImage}
+        isOpen={!!modalImage}
+        onClose={() => setModalImage(null)}
+        productName={modalProductName}
+      />
     </div>
   );
 };
