@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const CartList = ({ cart, deleteItem, editQuantity }) => {
-  // calculate total value of cart
   const total = cart.reduce((acc, cur) => {
     if (cur.quantity > 0) {
       return acc + cur.price * cur.quantity;
@@ -11,34 +10,38 @@ const CartList = ({ cart, deleteItem, editQuantity }) => {
   }, 0);
 
   useEffect(() => {
-    // save cart to local storage whenever it changes
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
   return (
-    <div className="cart-list container my-4">
+    <div className="space-y-4">
       {cart.map((product) => (
-        <div className="cart-item row py-2" key={`${product.name}-${product.color}-${product.size}`}>
-          <div className="col">{product.name} - {product.color} - {product.size}</div>
-          <div className="col-auto">
+        <div 
+          className="flex items-center justify-between py-3 border-b border-gray-200" 
+          key={`${product.name}-${product.color}-${product.size}`}
+        >
+          <div className="flex-1 pr-4">{product.name} - {product.color} - {product.size}</div>
+          <div className="flex items-center space-x-4">
             <input 
               type="number" 
-              className="form-control form-control-sm" 
+              className="w-20 px-2 py-1 border rounded focus:ring-blue-500 focus:border-blue-500" 
               min="1" 
-              style={{ width: "60px" }} 
               onChange={(e) => editQuantity(product, e.target.value)} 
               value={product.quantity} 
             />
-          </div>
-          <div className="col-auto">R${(product.price * product.quantity).toFixed(2)}</div>
-          <div className="col-auto">
-            <button className="btn btn-primary" onClick={() => deleteItem(product)}>Deletar</button>
+            <div className="w-24 text-right">R${(product.price * product.quantity).toFixed(2)}</div>
+            <button 
+              className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded transition duration-200"
+              onClick={() => deleteItem(product)}
+            >
+              Deletar
+            </button>
           </div>
         </div>
       ))}
-      <div className="cart-item row py-2">
-        <div className="col font-weight-bold">Total</div>
-        <div className="col-auto font-weight-bold">R${total.toFixed(2)}</div>
+      <div className="flex justify-between items-center py-3 font-bold">
+        <div>Total</div>
+        <div>R${total.toFixed(2)}</div>
       </div>
     </div>
   );

@@ -562,73 +562,102 @@ const ProductList = ({ addToCart }) => {
   };
 
   return (
-    <div className="container my-4">
-      <div className="row">
+    <div className="container mx-auto px-4 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {products.map((product) => (
-          <div className="col-md-6 col-lg-4 mb-4" key={product.name}>
-            <div className="card h-100">
-              <div className="card-body">
-                <div className="product-image-container">
-                  <img
-                    src={product.images[selectedImageIndex[product.name] || 0]}
-                    alt={product.name}
-                    className="card-img-top"
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                  {product.images.length > 1 && (
-                    <>
-                      <button className="btn btn-secondary" onClick={() => handleImageChange(product.name, 'prev')}>Previous</button>
-                      <button className="btn btn-secondary" onClick={() => handleImageChange(product.name, 'next')}>Next</button>
-                    </>
-                  )}
+          <div className="bg-white rounded-lg shadow-md overflow-hidden" key={product.name}>
+            <div className="relative">
+              <img
+                src={product.images[selectedImageIndex[product.name] || 0]}
+                alt={product.name}
+                className="w-full h-64 object-cover"
+              />
+              {product.images.length > 1 && (
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                  <button 
+                    className="px-3 py-1 bg-black bg-opacity-50 text-white rounded-lg hover:bg-opacity-75 transition duration-200"
+                    onClick={() => handleImageChange(product.name, 'prev')}
+                  >
+                    ←
+                  </button>
+                  <button 
+                    className="px-3 py-1 bg-black bg-opacity-50 text-white rounded-lg hover:bg-opacity-75 transition duration-200"
+                    onClick={() => handleImageChange(product.name, 'next')}
+                  >
+                    →
+                  </button>
                 </div>
-                <h5 className="card-title">{product.name}</h5>
-                <span className="product-price h5">R${product.price.toFixed(2)}</span>
-                <div className="form-group">
-                  <label htmlFor={`color${product.name}`}>Color</label>
+              )}
+            </div>
+            <div className="p-4 space-y-4">
+              <div className="flex justify-between items-start">
+                <h5 className="text-lg font-semibold">{product.name}</h5>
+                <span className="text-lg font-bold text-blue-600">R${product.price.toFixed(2)}</span>
+              </div>
+              
+              <div className="space-y-3">
+                <div>
+                  <label htmlFor={`color${product.name}`} className="block text-sm font-medium text-gray-700 mb-1">
+                    Cor
+                  </label>
                   <select 
-                    className="form-control" 
+                    className="w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500" 
                     id={`color${product.name}`} 
                     value={selectedColor[product.name] || product.color[0]} 
                     onChange={(e) => handleColorChange(product.name, e)}
                   >
-                    {product.color.map((color) => <option key={color} value={color}>{color}</option>)}
+                    {product.color.map((color) => (
+                      <option key={color} value={color}>{color}</option>
+                    ))}
                   </select>
                 </div>
-                <div className="form-group">
-                  <label htmlFor={`size${product.name}`}>Size</label>
+
+                <div>
+                  <label htmlFor={`size${product.name}`} className="block text-sm font-medium text-gray-700 mb-1">
+                    Tamanho
+                  </label>
                   <select 
-                    className="form-control" 
+                    className="w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500" 
                     id={`size${product.name}`} 
                     value={selectedSize[product.name] || product.size[0]} 
                     onChange={(e) => handleSizeChange(product.name, e)}
                   >
-                    {product.size.map((size) => <option key={size} value={size}>{size}</option>)}
+                    {product.size.map((size) => (
+                      <option key={size} value={size}>{size}</option>
+                    ))}
                   </select>
                 </div>
-                <div className="form-group">
-                  <label htmlFor={`quantity${product.name}`}>Quantity</label>
+
+                <div>
+                  <label htmlFor={`quantity${product.name}`} className="block text-sm font-medium text-gray-700 mb-1">
+                    Quantidade
+                  </label>
                   <input 
                     type="number" 
-                    className="form-control" 
+                    className="w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500" 
                     id={`quantity${product.name}`} 
-                    value={quantity[product.name] || ''}
+                    value={quantity[product.name] || ''} 
                     onChange={(e) => handleQuantityChange(product.name, e)} 
                   />
                 </div>
-                <button 
-                  className="btn btn-primary" 
-                  onClick={() => addToCart({ 
-                    ...product, 
-                    quantity: quantity[product.name] || 0, 
-                    size: selectedSize[product.name] || product.size[0], 
-                    color: selectedColor[product.name] || product.color[0] 
-                  })}
-                  disabled={!(quantity[product.name] > 0)}
-                >
-                  Adicionar ao carrinho
-                </button>
               </div>
+
+              <button 
+                className={`w-full py-2 px-4 rounded-md transition duration-200 ${
+                  quantity[product.name] > 0
+                    ? 'bg-blue-500 hover:bg-blue-600 text-white'
+                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
+                onClick={() => addToCart({ 
+                  ...product, 
+                  quantity: quantity[product.name] || 0, 
+                  size: selectedSize[product.name] || product.size[0], 
+                  color: selectedColor[product.name] || product.color[0] 
+                })}
+                disabled={!(quantity[product.name] > 0)}
+              >
+                Adicionar ao carrinho
+              </button>
             </div>
           </div>
         ))}
