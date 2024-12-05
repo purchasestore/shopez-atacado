@@ -4,32 +4,162 @@ import PropTypes from 'prop-types';
 const ProductList = ({ addToCart }) => {
   const products = [
     {
-      "name": "VEST-FAIXA-ALCINHA-VERMELHO",
-      "color": ["VERMELHO"],
+      "name": "VESTIDO-MADRID-Preto",
+      "color": ["Preto"],
       "price": 40.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
-        "https://dcdn.mitiendanube.com/stores/004/178/209/products/62-d2931b23d9115afc9817072294729746-640-0.webp",
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/9-fa2514abf75c459b9817267730200098-1024-1024.webp",
       ],
       "quantity": 0
     },
     {
-      "name": "VEST-FAIXA-ALCINHA-PRETO",
-      "color": ["PRETO"],
+      "name": "VESTIDO-MADRID-Branco",
+      "color": ["Branco"],
       "price": 40.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
-        "https://dcdn.mitiendanube.com/stores/004/178/209/products/66-78525afca968f3345f17072294737337-1024-1024.webp",
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/5-cab1a38982e91ab53517267730188681-1024-1024.webp",
       ],
       "quantity": 0
     },
     {
-      "name": "VEST-FAIXA-ALCINHA-BRANCO",
-      "color": ["BRANCO"],
+      "name": "VESTIDO-MADRID-Nude",
+      "color": ["Nude"],
       "price": 40.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
-        "https://dcdn.mitiendanube.com/stores/004/178/209/products/63-8438ba0ebc54640d3217072294735135-640-0.webp",
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/3-06495147239a22397617267730197847-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "VESTIDO-MADRID-Vermelho",
+      "color": ["Vermelho"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/7-63365da5ea5f9c912a17267730195844-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "VESTIDO-VEGAS-Preto",
+      "color": ["Preto"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/20-d518cb3064af6b9e9017267722966997-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "VESTIDO-VEGAS-Branco",
+      "color": ["Branco"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/13-8c840847b77ff4de5817267722960983-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "VESTIDO-VEGAS-Nude",
+      "color": ["Nude"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/11-ed62fd88de8c04e88c17267722961035-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "VESTIDO-VEGAS-Vermelho",
+      "color": ["Vermelho"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/16-42d83fbfb57a7b729717267722969132-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Vest-Longo-Bojo-Romano-Preto",
+      "color": ["Preto"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/vestidoromanopreto1-6512c2b61baa7fbbd417059484977005-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Vest-Longo-Bojo-Romano-Branco",
+      "color": ["Branco"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/1693828925edeed2a0d50e694ec5982e75ca14bc6b-9da70041ccb2e98c8617059485047261-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Vest-Longo-Bojo-Romano-Nude",
+      "color": ["Nude"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/vestidoromanonude1-78ce6b9101c823b0f217059484949564-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Vest-Longo-Bojo-Romano-Vermelho",
+      "color": ["Vermelho"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/design-sem-nome-2023-11-07t140524-655-5696174721ba27f32d17059486402963-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Vestido-Agua-Viva-Preto",
+      "color": ["Preto"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/design-quadrado-17-b8528586f206a3c4ad17265064827505-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Vestido-Agua-Viva-Azul",
+      "color": ["Azul"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/copia-de-design-sitemktplace-39-00c53c4ed55d9d1e0a17265064846531-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Vestido-Agua-Viva-Nude",
+      "color": ["Nude"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/bannermobile-d419e298fea0c9e2cf17320465871916-1024-1024.webp",
+      ],
+      "quantity": 0
+    },
+    {
+      "name": "Vestido-Agua-Viva-Vermelho",
+      "color": ["Vermelho"],
+      "price": 40.00,
+      "size": ["PP", "P", "M", "G"],
+      "images": [
+        "https://acdn.mitiendanube.com/stores/004/178/209/products/img_7265-db37ac9419d9836efa17320464731368-1024-1024.webp",
       ],
       "quantity": 0
     },
@@ -170,66 +300,6 @@ const ProductList = ({ addToCart }) => {
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/55-57384d81c79d634a1417068568140519-640-0.webp",
-      ],
-      "quantity": 0
-    },
-    {
-      "name": "VESTIDO-Floral-LONGO-PRETO",
-      "color": ["PRETO"],
-      "price": 70.00,
-      "size": ["PP", "P", "M", "G"],
-      "images": [
-        "https://dcdn.mitiendanube.com/stores/004/178/209/products/design-sem-nome-2023-12-05t132944-783-a899e30f40dff4372217059861157844-640-0.webp",
-      ],
-      "quantity": 0
-    },
-    {
-      "name": "VESTIDO-Floral-LONGO-BRANCO",
-      "color": ["BRANCO"],
-      "price": 70.00,
-      "size": ["PP", "P", "M", "G"],
-      "images": [
-        "https://dcdn.mitiendanube.com/stores/004/178/209/products/design-sem-nome-2023-12-05t132815-696-259ea6ed790811801117059861154192-640-0.webp",
-      ],
-      "quantity": 0
-    },
-    {
-      "name": "CONJ-REVEILLON-TOP-SAIA-BRANCO",
-      "color": ["BRANCO"],
-      "price": 75.00,
-      "size": ["PP", "P", "M", "G"],
-      "images": [
-        "https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-conjunto-reveillon-com-top-decotado-e-saia-com-amarracao-colecao-premium-1703614371521.png"
-      ],
-      "quantity": 0
-    },
-    {
-      "name": "CONJ-REVEILLON-TOP-SAIA-ROSA",
-      "color": ["ROSA"],
-      "price": 75.00,
-      "size": ["PP", "P", "M", "G"],
-      "images": [
-        "https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-conjunto-reveillon-com-top-decotado-e-saia-com-amarracao-colecao-premium-1703614394200.png"
-      ],
-      "quantity": 0
-    },
-    {
-      "name": "CONJ-REVEILLON-TOP-SAIA - PRETO",
-      "color": ["PRETO"],
-      "price": 75.00,
-      "size": ["PP", "P", "M", "G"],
-      "images": [
-        "https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-conjunto-reveillon-com-top-decotado-e-saia-com-amarracao-colecao-premium-1703614385513.png"
-      ],
-      "quantity": 0
-    },
-    {
-      "name": "CONJ-REVEILLON-TOP-SAIA -NUDE",
-      "color": ["NUDE"],
-      "price": 75.00,
-      "size": ["PP", "P", "M", "G"],
-      "images": [
-        "https://17741.cdn.simplo7.net/static/17741/sku/conjuntos-conjunto-reveillon-com-top-decotado-e-saia-com-amarracao-colecao-premium-1703614362773.png"
       ],
       "quantity": 0
     },
@@ -445,36 +515,6 @@ const ProductList = ({ addToCart }) => {
       "size": ["PP", "P", "M", "G", "GG"],
       "images": [
         "https://i.pinimg.com/474x/f0/d5/63/f0d56375bf1baa552d441ffd75f82efe.jpg",
-      ],
-      "quantity": 0
-    },
-    {
-      "name": "BIQ-MARQUINHA-FIO-NUDE",
-      "color": ["NUDE"],
-      "price": 30.00,
-      "size": ["PP", "P", "M", "G", "GG"],
-      "images": [
-        "https://i.pinimg.com/474x/dd/8a/43/dd8a435c829491a5d649e3f5cf603938.jpg"
-      ],
-      "quantity": 0
-    },
-    {
-      "name": "BIQ-MARQUINHA-FIO-BRANCO",
-      "color": ["BRANCO"],
-      "price": 30.00,
-      "size": ["PP", "P", "M", "G", "GG"],
-      "images": [
-        "https://i.pinimg.com/474x/74/bc/73/74bc73ba87ad269e8622b187d29cfe91.jpg"
-      ],
-      "quantity": 0
-    },
-    {
-      "name": "BIQ-MARQUINHA-FIO-PRETO",
-      "color": ["PRETO"],
-      "price": 30.00,
-      "size": ["PP", "P", "M", "G", "GG"],
-      "images": [
-        "https://i.pinimg.com/474x/da/ff/e4/daffe46ebccb3194a64a7b298560f1e7.jpg"
       ],
       "quantity": 0
     }
