@@ -7,7 +7,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "VESTIDO-MADRID-Preto",
       "color": ["Preto"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/9-fa2514abf75c459b9817267730200098-1024-1024.webp",
@@ -17,7 +17,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "VESTIDO-MADRID-Branco",
       "color": ["Branco"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/5-cab1a38982e91ab53517267730188681-1024-1024.webp",
@@ -27,7 +27,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "VESTIDO-MADRID-Nude",
       "color": ["Nude"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/3-06495147239a22397617267730197847-1024-1024.webp",
@@ -37,7 +37,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "VESTIDO-MADRID-Vermelho",
       "color": ["Vermelho"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/7-63365da5ea5f9c912a17267730195844-1024-1024.webp",
@@ -47,7 +47,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "VESTIDO-VEGAS-Preto",
       "color": ["Preto"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/20-d518cb3064af6b9e9017267722966997-1024-1024.webp",
@@ -57,7 +57,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "VESTIDO-VEGAS-Branco",
       "color": ["Branco"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/13-8c840847b77ff4de5817267722960983-1024-1024.webp",
@@ -67,7 +67,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "VESTIDO-VEGAS-Nude",
       "color": ["Nude"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/11-ed62fd88de8c04e88c17267722961035-1024-1024.webp",
@@ -77,7 +77,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "VESTIDO-VEGAS-Vermelho",
       "color": ["Vermelho"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/16-42d83fbfb57a7b729717267722969132-1024-1024.webp",
@@ -87,7 +87,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Vest-Longo-Bojo-Romano-Preto",
       "color": ["Preto"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/vestidoromanopreto1-6512c2b61baa7fbbd417059484977005-1024-1024.webp",
@@ -97,7 +97,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Vest-Longo-Bojo-Romano-Branco",
       "color": ["Branco"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/1693828925edeed2a0d50e694ec5982e75ca14bc6b-9da70041ccb2e98c8617059485047261-1024-1024.webp",
@@ -107,7 +107,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Vest-Longo-Bojo-Romano-Nude",
       "color": ["Nude"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/vestidoromanonude1-78ce6b9101c823b0f217059484949564-1024-1024.webp",
@@ -117,7 +117,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Vest-Longo-Bojo-Romano-Vermelho",
       "color": ["Vermelho"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/design-sem-nome-2023-11-07t140524-655-5696174721ba27f32d17059486402963-1024-1024.webp",
@@ -127,7 +127,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Vestido-Agua-Viva-Preto",
       "color": ["Preto"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/design-quadrado-17-b8528586f206a3c4ad17265064827505-1024-1024.webp",
@@ -137,7 +137,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Vestido-Agua-Viva-Azul",
       "color": ["Azul"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/copia-de-design-sitemktplace-39-00c53c4ed55d9d1e0a17265064846531-1024-1024.webp",
@@ -147,7 +147,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Vestido-Agua-Viva-Nude",
       "color": ["Nude"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/bannermobile-d419e298fea0c9e2cf17320465871916-1024-1024.webp",
@@ -157,7 +157,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Vestido-Agua-Viva-Vermelho",
       "color": ["Vermelho"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://acdn.mitiendanube.com/stores/004/178/209/products/img_7265-db37ac9419d9836efa17320464731368-1024-1024.webp",
@@ -167,7 +167,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "CONJ-MISS-TOP-SAIA-VERMELHO",
       "color": ["VERMELHO"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/whatsapp-image-2024-03-02-at-12-57-58-2-e07ffeaaff17f3bad217093959186104-640-0.webp",
@@ -177,7 +177,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "CONJ-MISS-TOP-SAIA-PRETO",
       "color": ["PRETO"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/whatsapp-image-2024-03-02-at-12-57-58-1-603bade1c6477965a617093959188420-640-0.webp",
@@ -187,7 +187,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "CONJ-MISS-TOP-SAIA-BRANCO",
       "color": ["BRANCO"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/whatsapp-image-2024-03-02-at-12-57-58-1f0b6b0d43add2cd4517093959192327-640-0.webp",
@@ -197,7 +197,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Conjunto Carnaval Top Torção Acinturado + Saia Tubinho-VERMELHO",
       "color": ["VERMELHO"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_0242-2be936e753347dffce17066222561582-640-0.webp",
@@ -207,7 +207,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Conjunto Carnaval Top Torção Acinturado + Saia Tubinho-PRETO",
       "color": ["PRETO"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_0440-697a45b1c516969dbe17066222558992-640-0.webp",
@@ -217,7 +217,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Conjunto Carnaval Top Torção Acinturado + Saia Tubinho-BRANCO",
       "color": ["BRANCO"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_0556-81e246dc481eeecdf417066222564388-640-0.webp",
@@ -227,7 +227,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Plus Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-PRETO",
       "color": ["PRETO"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/36-5150fd6ed2cabbabf117068578213550-640-0.webp",
@@ -237,7 +237,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Plus Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-BRANCO",
       "color": ["BRANCO"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/29-ef711121f2af37752d17068578190101-1024-1024.webp",
@@ -247,7 +247,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Plus Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-VERMELHO",
       "color": ["VERMELHO"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/32-d65f9646f75ca4361e17068578218575-640-0.webp",
@@ -257,7 +257,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Plus Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-NUDE",
       "color": ["NUDE"],
-      "price": 40.00,
+      "price": 45.00,
       "size": ["G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/25-289e3126cc9c4ae57317068578225904-640-0.webp",
@@ -267,7 +267,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-PRETO",
       "color": ["PRETO"],
-      "price": 70.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/52-026957c0ea7333c99317068568140505-640-0.webp",
@@ -277,7 +277,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-BRANCO",
       "color": ["BRANCO"],
-      "price": 70.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/58-e3a0872620d0e318d817068568140505-640-0.webp",
@@ -287,7 +287,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-VERMELHO",
       "color": ["VERMELHO"],
-      "price": 70.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_1017-53f66803c361c4504b17093967029614-640-0.webp",
@@ -297,7 +297,7 @@ const ProductList = ({ addToCart }) => {
     {
       "name": "Conjunto Carnaval Franzido Top Ajustável Manga longa + Saia Franzida-NUDE",
       "color": ["NUDE"],
-      "price": 70.00,
+      "price": 45.00,
       "size": ["PP", "P", "M", "G"],
       "images": [
         "https://dcdn.mitiendanube.com/stores/004/178/209/products/55-57384d81c79d634a1417068568140519-640-0.webp",
@@ -306,15 +306,9 @@ const ProductList = ({ addToCart }) => {
     },
     {
         "name": "CONJ-BUTTERFLY-TOP-SAIA-Branco",
-        "color": [
-            "BRANCO"
-        ],
-        "price": 40,
-        "size": [
-            "PP",
-            "P",
-            "M",
-            "G"
+        "color": ["BRANCO"],
+        "price": 45,
+        "size": [            "PP",            "P",            "M",            "G"
         ],
         "images": [
             "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_1438-d273db010a197b26ff17072633511445-640-0.webp"
@@ -323,15 +317,9 @@ const ProductList = ({ addToCart }) => {
     },
     {
         "name": "CONJ-BUTTERFLY-TOP-SAIA-Nude",
-        "color": [
-            "Nude"
-        ],
-        "price": 40,
-        "size": [
-            "PP",
-            "P",
-            "M",
-            "G"
+        "color": ["Nude"],
+        "price": 45,
+        "size": [            "PP",            "P",            "M",            "G"
         ],
         "images": [
             "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_1619-b441153f7080ef895117072634961642-480-0.webp"
@@ -340,15 +328,9 @@ const ProductList = ({ addToCart }) => {
     },
     {
         "name": "CONJ-BUTTERFLY-TOP-SAIA-Preto",
-        "color": [
-            "Preto"
-        ],
-        "price": 40,
-        "size": [
-            "PP",
-            "P",
-            "M",
-            "G"
+        "color": ["Preto"],
+        "price": 45,
+        "size": [            "PP",            "P",            "M",            "G"
         ],
         "images": [
             "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_1213-1-417a53996cabd8dc4d17072633520715-640-0.webp"
@@ -356,41 +338,17 @@ const ProductList = ({ addToCart }) => {
         "quantity": 0
     },
     {
-        "name": "CONJ-BUTTERFLY-TOP-SAIA-Roxo",
-        "color": [
-            "Roxo"
-        ],
-        "price": 40,
-        "size": [
-            "PP",
-            "P",
-            "M",
-            "G"
-        ],
-        "images": [
-            "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_1238-07ab158878dcd208de17072633519258-480-0.webp"
-        ],
-        "quantity": 0
-    },
-    {
         "name": "CONJ-BUTTERFLY-TOP-SAIA-Laranja",
-        "color": [
-            "Laranja"
-        ],
-        "price": 40,
-        "size": [
-            "PP",
-            "P",
-            "M",
-            "G"
-        ],
+        "color": ["Laranja"],
+        "price": 45,
+        "size": ["PP", "P", "M", "G"],
         "images": [
             "https://dcdn.mitiendanube.com/stores/004/178/209/products/img_1293-1-1560eabf9710dab1ee17072633511359-640-0.webp"
         ],
         "quantity": 0
     },
     {
-      "name": "VEST-LONG-TOP-SAI-FEND - VERMELHO",
+      "name": "VEST-LONG-TOP-SAI-FEND-VERMELHO",
       "color": ["VERMELHO"],
       "price": 35.00,
       "size": ["PP", "P", "M", "G"],
@@ -400,7 +358,7 @@ const ProductList = ({ addToCart }) => {
       "quantity": 0
     },
     {
-      "name": "VEST-LONG-TOP-SAI-FEND - NUDE",
+      "name": "VEST-LONG-TOP-SAI-FEND-NUDE",
       "color": ["NUDE"],
       "price": 35.00,
       "size": ["PP", "P", "M", "G"],
@@ -410,7 +368,7 @@ const ProductList = ({ addToCart }) => {
       "quantity": 0
     },
     {
-      "name": "VEST-LONG-TOP-SAI-FEND - BRANCO",
+      "name": "VEST-LONG-TOP-SAI-FEND-BRANCO",
       "color": ["BRANCO"],
       "price": 35.00,
       "size": ["PP", "P", "M", "G"],
@@ -420,7 +378,7 @@ const ProductList = ({ addToCart }) => {
       "quantity": 0
     },
     {
-      "name": "VEST-LONG-TOP-SAI-FEND - PRETO",
+      "name": "VEST-LONG-TOP-SAI-FEND- PRETO",
       "color": ["PRETO"],
       "price": 35.00,
       "size": ["PP", "P", "M", "G"],
